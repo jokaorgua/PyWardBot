@@ -138,7 +138,7 @@ class Forwarding:
         )
 
         with open(config_dir/"forwarding.json", "w") as f:
-            json.dump(config, f, indent=4, ensure_ascii=False)
+            json.dump(config, f, indent=4, ensure_ascii=True)
 
     async def remove_forwarder(self, forwarder_id: str):
         """Remove a forwarding rule."""
@@ -149,7 +149,7 @@ class Forwarding:
                 config["forwarders"].remove(forwarder)
 
         with open(config_dir/"forwarding.json", "w") as f:
-            json.dump(config, f, indent=4, ensure_ascii=False)
+            json.dump(config, f, indent=4, ensure_ascii=True)
 
     async def get_blocked_images(self) -> list:
         """Get the list of blocked images."""
